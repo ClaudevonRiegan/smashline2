@@ -61,7 +61,7 @@ unsafe fn load_fighter_effects(ctx: &InlineCtx) {
     }
 }
 
-#[skyline::hook(offset = 0x14db7d4, inline)]
+/*#[skyline::hook(offset = 0x14db7d4, inline)]
 unsafe fn load_common_item_effects(ctx: &InlineCtx) {
     let search_index_begin = &*(*ctx.registers[2].x.as_ref() as *const u32);
     let _result = load_effects(
@@ -104,13 +104,13 @@ unsafe fn load_common_item_effects(ctx: &InlineCtx) {
 
         current_child = next_child;
     }
-}
+}*/
 
 pub fn install_effect_transplant_hooks() {
     skyline::patching::Patch::in_text(0x60bfd8).nop().unwrap();
-    skyline::patching::Patch::in_text(0x14db7d4).nop().unwrap();
-    skyline::install_hooks!(
-        load_fighter_effects,
-        load_common_item_effects
+    //skyline::patching::Patch::in_text(0x14db7d4).nop().unwrap();
+    skyline::install_hook!(
+        load_fighter_effects
+        //load_common_item_effects
     );
 }
