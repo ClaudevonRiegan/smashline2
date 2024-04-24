@@ -14,7 +14,7 @@ proc-macro-crate = "1.3.1"
 proc-macro-error = "1"
 proc-macro2 = "1"
 quote = "1"
-skyline = "0.2"
+skyline = "0.2.1"
 syn = { version = "1", features = ["full"] }
 uuid = { version = "1", features = ["v4"] }
 
@@ -44,6 +44,7 @@ once_cell = "1"
 prc-rs = { version = "1.6.1", features = ["indexmap-std"] }
 resources.path = "crates/resources"
 smash_script = { git = "https://github.com/Claude-1308/smash-script", branch = "development" }
+crc32fast = "=1.3.2"
 
 [patch.'https://github.com/BenHall-7/hash40-rs']
 hash40 = { git = "https://github.com/blu-dev/hash40-rs", branch = "patch-1" }
